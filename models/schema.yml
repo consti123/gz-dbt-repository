@@ -1,13 +1,16 @@
   # schema.yml  
-  version: 2
+version: 2
 
-  sources:
-  - name: raw            
+sources: 
+  - name: raw     
+    database: my-own-project-475410       
     schema: gz_raw_data
+    loader: bigquery
     tables:
-      - name: raw_gz_sales
-        identifier:  sales 
-      - name: raw_gz_product
-        identifier: product
+      - name: sales
+        identifier: raw_gz_sales
+
+      - name: product
+        identifier: raw_gz_product
       - name:  raw_gz_ship
         identifier:  ship
