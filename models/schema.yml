@@ -37,8 +37,8 @@ sources:
         identifier: raw_gz_product
         description: products of Greenweez
         columns: 
-        - name: product_id
-        - name: purchse_price
+        - name: products_id
+        - name: purchase_price
           tests: 
             - not_null
       
