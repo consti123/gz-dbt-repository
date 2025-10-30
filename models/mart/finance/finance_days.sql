@@ -1,4 +1,3 @@
-{{config(materialized='table')}}
 SELECT
 date_date
 ,ROUND(COUNT(DISTINCT orders_id),0) AS nb_transactions
