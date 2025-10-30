@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('raw', 'sales') }}
+    select *, cast(date_date AS timestamp) AS date_date from {{ source('raw', 'sales') }}
 
 ),
 

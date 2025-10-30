@@ -9,8 +9,55 @@ sources:
     tables:
       - name: sales
         identifier: raw_gz_sales
+        description: sales of Greenweez
+        loaded_at_field: date_date 
+        tests:
+            - unique:
+                column_name: "(orders_id  || '-' || pdt_id)"
+        freshness:
+          warn_after: {count: 90, period: day}
+        columns:
+        - name: date_date
+          tests: 
+            - not_null 
+        - name: orders_id
+          tests: 
+            - not_null
+        - name: pdt_id
+          tests: 
+            - not_null
+        - name: revenue
+          tests: 
+            - not_null
+        - name: quantity
+          tests: 
+            - not_null
 
       - name: product
         identifier: raw_gz_product
+        description: products of Greenweez
+        columns: 
+        - name: product_id
+        - name: purchse_price
+          tests: 
+            - not_null
+      
       - name: ship
         identifier: raw_gz_ship
+        description: ship of Greenweez
+        columns: 
+        - name: orders_id
+          tests: 
+            - not_null
+        - name: shipping_fee
+          tests:
+            - not_null
+        - name: shipping_fee_1
+          tests: 
+            - not_null
+        - name: logcost
+          tests: 
+            - not_null
+        - name: ship_cost
+          tests: 
+            - not_null
