@@ -61,3 +61,25 @@ sources:
         - name: ship_cost
           tests: 
             - not_null
+
+      - name: adwords
+        identifier: raw_gz_adwords
+        columns: 
+        - name: date_date
+        - name: paid_source
+        - name: campaign_key
+        - name: camPGN_name
+        - name: ads_cost
+        - name: impression
+        - name: click 
+
+      - name: bing
+        identifier: raw_gz_bing
+        columns: 
+        - name: date_date
+        - name: paid_source
+        - name: campaign_key
+        - name: camPGN_name
+        - name: ads_cost
+        - name: impression
+        - name: click
